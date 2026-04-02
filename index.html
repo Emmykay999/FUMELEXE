@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NOIRE — Luxury Perfumes</title>
+  <title>FUMELEXE — Luxury Perfumes</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --espresso: #1E0F08;
-      --gold: #B8913A;
-      --gold-light: #D4AF6A;
+      --gold: #C9971C;
+      --gold-light: #E0B84A;
+      --gold-vivid: #FFD700;
+      --gold-dark: #A67C00;
       --champagne: #F0E2C4;
       --beige: #FAF5EC;
       --cream: #FFFDF8;
@@ -145,38 +147,42 @@
     .btn-primary {
       display: inline-block;
       padding: 0.85rem 2.2rem;
-      background: var(--gold);
-      color: var(--warm-black);
+      background: var(--gold-vivid);
+      color: #000;
       font-family: var(--sans);
       font-size: 0.7rem;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 16px rgba(201,151,28,0.35);
     }
     .hero-actions .btn-primary {
-      background: #FFD700; /* Vibrant Gold */
+      background: var(--gold-vivid);
       color: #000;
     }
     .hero-actions .btn-primary:hover {
-      background: #E6C200;
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(201,151,28,0.5);
     }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,151,28,0.5); }
     .btn-ghost {
       display: inline-block;
       padding: 0.85rem 2.2rem;
-      border: 1px solid rgba(240,226,196,0.3);
+      background: transparent;
+      border: 1px solid var(--champagne);
       color: var(--champagne);
       font-family: var(--sans);
       font-size: 0.7rem;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       text-decoration: none;
-      transition: border-color 0.3s, background 0.3s;
+      transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     }
-    .btn-ghost:hover { border-color: var(--gold); background: rgba(184,145,58,0.08); }
+    .btn-ghost:hover { background: #fff; color: #000; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255,255,255,0.2); border-color: #fff; }
     .hero-scroll {
       position: absolute;
       bottom: 2.5rem;
@@ -218,7 +224,7 @@
       font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 300;
       line-height: 1.15;
-      color: var(--espresso);
+      color: var(--gold);
     }
     .section-title em { font-style: italic; }
     .divider {
@@ -364,15 +370,15 @@
       font-family: var(--serif);
       font-size: 2.6rem;
       font-weight: 300;
-      color: var(--espresso);
+      color: var(--gold);
       line-height: 1;
     }
-    .stat-val span { color: var(--gold); }
+    .stat-val span { color: var(--gold-vivid); }
     .stat-label {
       font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--gold-dark);
       margin-top: 0.4rem;
     }
 
@@ -469,12 +475,12 @@
       font-family: var(--serif);
       font-size: 1.3rem;
       font-weight: 300;
-      color: var(--espresso);
+      color: var(--gold);
       margin-bottom: 0.8rem;
     }
     .why-text {
       font-size: 0.88rem;
-      color: var(--text-muted);
+      color: var(--gold-dark);
       line-height: 1.8;
     }
     .why-header { text-align: center; }
@@ -509,27 +515,31 @@
       padding: 0.9rem 2rem;
       font-family: var(--sans);
       font-size: 0.72rem;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       text-decoration: none;
       transition: all 0.3s;
+      background: var(--gold-vivid);
+      color: #000;
+      box-shadow: 0 2px 16px rgba(201,151,28,0.35);
     }
     .contact-btn.wa {
-      background: #25D366;
-      color: #fff;
+      background: var(--gold-vivid);
+      color: #000;
     }
-    .contact-btn.wa:hover { background: #1fbd5a; transform: translateY(-2px); }
+    .contact-btn.wa:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,151,28,0.5); }
     .contact-btn.ig {
-      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-      color: #fff;
+      background: var(--gold-vivid);
+      color: #000;
     }
-    .contact-btn.ig:hover { opacity: 0.88; transform: translateY(-2px); }
+    .contact-btn.ig:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,151,28,0.5); }
     .contact-btn.email {
-      border: 1px solid rgba(184,145,58,0.5);
-      color: var(--champagne);
+      background: var(--gold-vivid);
+      color: #000;
+      border: none;
     }
-    .contact-btn.email:hover { border-color: var(--gold); background: rgba(184,145,58,0.1); }
+    .contact-btn.email:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,151,28,0.5); }
     .contact-btn svg { width: 16px; height: 16px; }
 
     /* ── FOOTER ── */
@@ -594,18 +604,45 @@
       .collection-grid { grid-template-columns: 1fr 1fr; }
       .col-card:first-child { grid-row: auto; }
       #about { grid-template-columns: 1fr; }
-      .about-img-wrap { max-width: 480px; }
+      .about-img-wrap { max-width: 480px; margin: 0 auto; }
       .showcase-grid { grid-template-columns: repeat(2, 1fr); }
       .why-grid { grid-template-columns: 1fr 1fr; }
+      .hero-headline { font-size: 3.5rem; }
     }
     @media (max-width: 600px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
+      nav { padding: 1rem 5vw; }
+      .nav-links { 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(30, 15, 8, 0.96);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 2rem 0;
+        display: flex;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s ease;
+        border-bottom: 1px solid rgba(240,226,196,0.1);
+      }
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .nav-links a { font-size: 0.9rem; }
+      .hamburger { display: flex; z-index: 101; }
       .collection-grid { grid-template-columns: 1fr; }
       .showcase-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
       .why-grid { grid-template-columns: 1fr; }
-      .about-stats { gap: 2rem; }
-      footer { flex-direction: column; text-align: center; }
+      .about-stats { gap: 1.5rem; flex-wrap: wrap; justify-content: center; text-align: center; }
+      footer { flex-direction: column; text-align: center; gap: 2rem; }
+      .hero-actions { justify-content: center; }
+      .hero-headline { font-size: 2.8rem; }
+      .hero-content { text-align: center; }
+      .hero-sub { margin: 0 auto 2.8rem; }
     }
   </style>
 </head>
@@ -613,7 +650,7 @@
 
 <!-- ── NAV ── -->
 <nav id="navbar">
-  <a class="nav-logo" href="#">N<span>◆</span>IRE</a>
+  <a class="nav-logo" href="#">FUMELEXE</a>
   <ul class="nav-links">
     <li><a href="#hero">Home</a></li>
     <li><a href="#collection">Collection</a></li>
@@ -708,13 +745,13 @@
 <!-- ── ABOUT ── -->
 <section id="about">
   <div class="about-img-wrap reveal">
-    <img src="https://images.unsplash.com/photo-1592945403407-9caf930b6b0b?w=800&q=80" alt="Brand Story" loading="lazy" />
+    <img src="our_story.png" alt="Brand Story" loading="lazy" />
   </div>
   <div class="about-body reveal">
     <p class="section-label">Our Story</p>
     <h2 class="section-title">Born from<br><em>Passion &amp; Craft</em></h2>
     <div class="divider"></div>
-    <p>NOIRE was founded on a single belief: that <strong>fragrance is the most intimate form of luxury</strong>. Each bottle holds a story — of rare ingredients sourced from across the globe, of artisans who treat blending as a sacred art.</p>
+    <p>FUMELEXE was founded on a single belief: that <strong>fragrance is the most intimate form of luxury</strong>. Each bottle holds a story — of rare ingredients sourced from across the globe, of artisans who treat blending as a sacred art.</p>
     <p>We do not follow trends. We create timeless signatures that speak to the soul — warm, layered, and deeply personal.</p>
     <div class="about-stats">
       <div>
@@ -820,7 +857,7 @@
 <!-- ── WHY US ── -->
 <section id="why">
   <div class="why-header reveal">
-    <p class="section-label">Why NOIRE</p>
+    <p class="section-label">Why FUMELEXE</p>
     <h2 class="section-title">Crafted with<br><em>Intention</em></h2>
     <div class="divider" style="margin:1.8rem auto;"></div>
   </div>
@@ -861,11 +898,11 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
         Chat on WhatsApp
       </a>
-      <a href="https://instagram.com/noire" class="contact-btn ig" target="_blank">
+      <a href="https://instagram.com/fumelexe" class="contact-btn ig" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         Instagram
       </a>
-      <a href="mailto:hello@noire.com" class="contact-btn email">
+      <a href="mailto:hello@fumelexe.com" class="contact-btn email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Email Us
       </a>
@@ -875,8 +912,8 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <div class="footer-logo">N<span>◆</span>IRE</div>
-  <div class="footer-copy">© 2025 NOIRE. All rights reserved.</div>
+  <div class="footer-logo">FUMELEXE</div>
+  <div class="footer-copy">© 2025 FUMELEXE. All rights reserved.</div>
   <div class="footer-social">
     <a href="#">Instagram</a>
     <a href="#">WhatsApp</a>
@@ -889,6 +926,22 @@
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile Menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu on link click
+  const navItems = document.querySelectorAll('.nav-links a');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
   });
 
   // Scroll reveal
